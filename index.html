@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛍️ Lojinha de Achadinhos Online — Shopee, Amazon e muito mais!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(180deg, #fff7ef, #fff);
+            color: #333;
+            text-align: center;
+        }
+        header {
+            padding: 40px 20px 10px;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #e65c00;
+        }
+        p {
+            max-width: 600px;
+            margin: 10px auto 30px;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 280px;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        .shopee { background-color: #ff6b00; }
+        .amazon { background-color: #fbbf24; color: #000; }
+        .mercado { background-color: #3b82f6; }
+        footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #666;
+            padding-bottom: 20px;
+        }
+        img {
+            width: 180px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🛍️ Lojinha de Achadinhos Online — Shopee, Amazon e muito mais!</h1>
+        <p>Aproveite ofertas exclusivas, produtos variados e promoções especiais de fim de ano!<br>
+        Clique abaixo e confira todos os achadinhos das minhas lojas favoritas.</p>
+        <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" alt="Carrinho de compras">
+    </header>
+
+    <div class="buttons">
+        <a href="https://collshp.com/chztrlojinha?view=storefront" target="_blank" class="btn shopee">
+            🛒 Visite minha lojinha na Shopee — Promoções imperdíveis!
+        </a>
+        <a href="#" class="btn amazon">🅰️ Ofertas da Amazon (em breve)</a>
+        <a href="#" class="btn mercado">💡 Destaques do Mercado (em breve)</a>
+    </div>
+
+    <footer>
+        <p>© 2025 Lojinha de Achadinhos Online — Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
