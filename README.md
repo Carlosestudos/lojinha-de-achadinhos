@@ -1,88 +1,106 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🛍️ Lojinha de Achadinhos Online — Shopee, Amazon e muito mais!</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(180deg, #fff7ef, #fff);
-            color: #333;
-            text-align: center;
-        }
-        header {
-            padding: 40px 20px 10px;
-        }
-        h1 {
-            font-size: 2rem;
-            color: #e65c00;
-        }
-        p {
-            max-width: 600px;
-            margin: 10px auto 30px;
-            line-height: 1.6;
-            font-size: 1.1rem;
-        }
-        .buttons {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 280px;
-            padding: 15px;
-            border: none;
-            border-radius: 12px;
-            font-size: 1rem;
-            color: white;
-            text-decoration: none;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-        .btn:hover {
-            transform: scale(1.05);
-        }
-        .shopee { background-color: #ff6b00; }
-        .amazon { background-color: #fbbf24; color: #000; }
-        .mercado { background-color: #3b82f6; }
-        footer {
-            margin-top: 40px;
-            font-size: 0.9rem;
-            color: #666;
-            padding-bottom: 20px;
-        }
-        img {
-            width: 180px;
-            margin-top: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lojinha de Achadinhos Super Promoções 🛍️</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #fffdf5, #f5f5f5);
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .bag {
+      font-size: 3rem;
+      animation: swing 2.5s ease-in-out infinite;
+      transform-origin: top center;
+    }
+
+    @keyframes swing {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(10deg); }
+      50% { transform: rotate(0deg); }
+      75% { transform: rotate(-10deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .button {
+      display: block;
+      width: 85%;
+      max-width: 320px;
+      margin: 10px auto;
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+    }
+
+    .shopee {
+      background-color: #ee4d2d;
+    }
+
+    .mercado {
+      background-color: #0077ff;
+    }
+
+    .amazon {
+      background-color: #ffcc00;
+      color: #333;
+    }
+
+    footer {
+      font-size: 0.9rem;
+      color: #777;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>🛍️ Lojinha de Achadinhos Online — Shopee, Amazon e muito mais!</h1>
-        <p>Aproveite ofertas exclusivas, produtos variados e promoções especiais de fim de ano!<br>
-        Clique abaixo e confira todos os achadinhos das minhas lojas favoritas.</p>
-        <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" alt="Carrinho de compras">
-    </header>
 
-    <div class="buttons">
-        <a href="https://collshp.com/chztrlojinha?view=storefront" target="_blank" class="btn shopee">
-            🛒 Visite minha lojinha na Shopee — Promoções imperdíveis!
-        </a>
-        <a href="#" class="btn amazon">🅰️ Ofertas da Amazon (em breve)</a>
-        <a href="#" class="btn mercado">💡 Destaques do Mercado (em breve)</a>
-    </div>
+  <div class="bag">🛍️</div>
+  <h1>Lojinha de Achadinhos Super Promoções</h1>
+  <p>Confira as melhores ofertas nas principais lojas online!</p>
 
-    <footer>
-        <p>© 2025 Lojinha de Achadinhos Online — Todos os direitos reservados.</p>
-    </footer>
+  <!-- Shopee -->
+  <a href="https://s.shopee.com.br/AUimiY02NH" class="button shopee" target="_blank">🧡 Achadinhos na Shopee</a>
+
+  <!-- Mercado Livre -->
+  <a href="https://mercadolivre.com/sec/1nNnSoA" class="button mercado" target="_blank">💛 Veja meus achadinhos no Mercado Livre</a>
+
+  <!-- Amazon -->
+  <a href="#" class="button amazon" onclick="alert('Em breve novidades da Amazon! 💛')">🅰️ Em breve: Achadinhos na Amazon</a>
+
+  <footer>© 2025 Lojinha de Achadinhos Super Promoções — Feito com 💛 por Carlos</footer>
+
 </body>
 </html>
