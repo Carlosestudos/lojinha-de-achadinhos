@@ -1,94 +1,110 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lojinha de Achadinhos - Carlos</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lojinha de Achadinhos Super Promoções 🛍️</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: url("https://i.imgur.com/8yKzz7B.png") no-repeat center;
-            background-size: 350px;
-            background-attachment: fixed;
-            opacity: 0.97;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
-        }
+<style>
+    body {
+        background: linear-gradient(135deg, #fffdf5, #f5f5f5);
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        text-align: center;
+    }
 
-        h1 {
-            margin-top: 20px;
-        }
+    h1 {
+        font-size: 1.8rem;
+        color: #333;
+        margin-bottom: 10px;
+    }
 
-        .button-container {
-            margin-top: 40px;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
+    .bag {
+        font-size: 3rem;
+        animation: swing 2.5s ease-in-out infinite;
+        transform-origin: top center;
+    }
 
-        .store-btn {
-            width: 210px;
-            padding: 12px;
-            border-radius: 12px;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background-color: white;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.25);
-            transition: 0.3s;
-        }
+    @keyframes swing {
+        0% { transform: rotate(0deg); }
+        25% { transform: rotate(10deg); }
+        50% { transform: rotate(0deg); }
+        75% { transform: rotate(-10deg); }
+        100% { transform: rotate(0deg); }
+    }
 
-        .store-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.35);
-        }
+    p {
+        font-size: 1.1rem;
+        color: #555;
+        margin-bottom: 20px;
+    }
 
-        .store-btn img {
-            height: 32px;
-        }
-    </style>
+    .button {
+        display: block;
+        width: 85%;
+        max-width: 320px;
+        margin: 10px auto;
+        padding: 15px;
+        border: none;
+        border-radius: 12px;
+        font-size: 1.1rem;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+    }
+
+    .button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+    }
+
+    .shopee {
+        background-color: #ee4d2d;
+    }
+
+    .mercado {
+        background-color: #0077ff;
+    }
+
+    footer {
+        font-size: 0.9rem;
+        color: #777;
+        margin-top: 20px;
+    }
+</style>
 </head>
+
 <body>
 
-    <h1>🌟 Lojinha de Achadinhos do Carlos 🌟</h1>
-    <p>Escolha a plataforma e veja os produtos recomendados!</p>
+<div class="bag">🛍️</div>
+<h1>Lojinha de Achadinhos Super Promoções</h1>
+<p>Confira as melhores ofertas nas principais lojas online!</p>
 
-    <div class="button-container">
+<!-- BOTÃO SHOPEE -->
+<a class="button shopee" 
+   href="https://collshp.com/chztrlojinha?view=storefront"
+   target="_blank">
+    🧡 Achadinhos na Shopee
+</a>
 
-        <!-- Shopee -->
-        <a href="https://s.shopee.com.br" target="_blank">
-            <button class="store-btn">
-                <img src="https://seeklogo.com/images/S/shopee-logo-0F5C0F46F5-seeklogo.com.png" alt="Shopee Logo">
-                Shopee
-            </button>
-        </a>
+<!-- BOTÃO MERCADO LIVRE -->
+<a class="button mercado"
+   href="https://mercadolivre.com/sec/1nNnSoA"
+   target="_blank">
+    💛 Veja meus achadinhos no Mercado Livre
+</a>
 
-        <!-- Mercado Livre -->
-        <a href="https://www.mercadolivre.com.br" target="_blank">
-            <button class="store-btn">
-                <img src="https://seeklogo.com/images/M/mercado-livre-logo-8F44540E21-seeklogo.com.png" alt="Mercado Livre Logo">
-                Mercado Livre
-            </button>
-        </a>
-
-        <!-- Amazon -->
-        <a href="https://www.amazon.com.br" target="_blank">
-            <button class="store-btn">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo">
-                Amazon
-            </button>
-        </a>
-
-    </div>
+<footer>
+© 2025 Lojinha de Achadinhos Super Promoções — Feito com 💛 por Carlos
+</footer>
 
 </body>
 </html>
-
