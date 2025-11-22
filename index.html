@@ -12,10 +12,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        height: 100vh;
+        min-height: 100vh;
         margin: 0;
         text-align: center;
+        padding-top: 30px;
     }
 
     h1 {
@@ -44,12 +44,16 @@
         margin-bottom: 20px;
     }
 
+    /* Botões gerais */
     .button {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
         width: 85%;
         max-width: 320px;
         margin: 10px auto;
-        padding: 15px;
+        padding: 14px;
         border: none;
         border-radius: 12px;
         font-size: 1.1rem;
@@ -66,18 +70,27 @@
         box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
     }
 
-    .shopee {
-        background-color: #ee4d2d;
+    /* Cores oficiais */
+    .shopee { background-color: #ee4d2d; }
+    .mercado { background-color: #0077ff; }
+    .amazon { background-color: #232f3e; }
+
+    .logo-img {
+        height: 28px;
     }
 
-    .mercado {
-        background-color: #0077ff;
+    .section-title {
+        margin-top: 40px;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #333;
     }
 
     footer {
+        margin-top: 40px;
+        margin-bottom: 20px;
         font-size: 0.9rem;
-        color: #777;
-        margin-top: 20px;
+        color: #333;
     }
 </style>
 </head>
@@ -88,23 +101,27 @@
 <h1>Lojinha de Achadinhos Super Promoções</h1>
 <p>Confira as melhores ofertas nas principais lojas online!</p>
 
-<a class="button shopee" 
-   href="https://collshp.com/chztrlojinha?view=storefront" 
-   target="_blank">
-    🧡 Achadinhos na Shopee
+<!-- Shopee Button -->
+<a class="button shopee" href="https://collshp.com/chztrlojinha?view=storefront" target="_blank">
+    <img src="/mnt/data/Imagem da shoppe.jpg" class="logo-img"> Shopee
 </a>
 
-<a class="button mercado" 
-   href="https://mercadolivre.com/sec/1nNnSoA" 
-   target="_blank">
-    💛 Veja meus achadinhos no Mercado Livre
+<!-- Mercado Livre Button -->
+<a class="button mercado" href="https://mercadolivre.com/sec/1nNnSoA" target="_blank">
+    <img src="/mnt/data/Imagem Mercado Livre.png" class="logo-img"> Mercado Livre
 </a>
 
-<a class="button amazon" 
-   href="#" 
-   target="_blank">
-    🅰️ Em breve: Achadinhos na Amazon
+<!-- Amazon Button -->
+<a class="button amazon" href="#amazon-section">
+    <img src="/mnt/data/A_digital_vector_graphic_features_the_Amazon_logo_.png" class="logo-img"> Amazon Achadinhos
 </a>
+
+<!-- Amazon Section -->
+<h2 id="amazon-section" class="section-title">Achadinhos da Amazon</h2>
+
+<a class="button amazon" href="https://amzn.to/3KhpAAI" target="_blank">Produto 1 - Amazon</a>
+<a class="button amazon" href="https://amzn.to/3XeDJ4C" target="_blank">Produto 2 - Amazon</a>
+<a class="button amazon" href="https://amzn.to/3MeDyDY" target="_blank">Produto 3 - Amazon</a>
 
 <footer>
 © 2025 Lojinha de Achadinhos Super Promoções — Feito com 💛 por Carlos
@@ -112,4 +129,3 @@
 
 </body>
 </html>
-
