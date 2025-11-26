@@ -69,15 +69,6 @@
       background-color: #ee4d2d;
     }
 
-    .mercado {
-      background-color: #0077ff;
-    }
-
-    .amazon {
-      background-color: #ffcc00;
-      color: #333;
-    }
-
     footer {
       font-size: 0.9rem;
       color: #777;
@@ -94,11 +85,6 @@
   <!-- Shopee -->
   <a href="https://s.shopee.com.br/AUimiY02NH" class="button shopee" target="_blank">🧡 Achadinhos na Shopee</a>
 
-  <!-- Mercado Livre -->
-  <a href="https://mercadolivre.com/sec/1nNnSoA" class="button mercado" target="_blank">💛 Veja meus achadinhos no Mercado Livre</a>
-
-  <!-- Amazon -->
-  <a href="#" class="button amazon" onclick="alert('Em breve novidades da Amazon! 💛')">🅰️ Em breve: Achadinhos na Amazon</a>
 
   <footer>© 2025 Lojinha de Achadinhos Super Promoções — Feito com 💛 por Carlos</footer>
 
