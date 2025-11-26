@@ -85,8 +85,7 @@
   <!-- Shopee -->
   <a href="https://s.shopee.com.br/AUimiY02NH" class="button shopee" target="_blank">🧡 Achadinhos na Shopee</a>
 
-
-  <footer>© 2025 Lojinha de Achadinhos Super Promoções — Feito com 💛 por Carlos</footer>
+ <footer>© 2025 Lojinha de Achadinhos Super Promoções — Feito com 💛 por Carlos</footer>
 
 </body>
 </html>
