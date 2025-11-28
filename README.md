@@ -1,91 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lojinha de Achadinhos Super Promoções 🛍️</title>
-  <style>
-    body {
-      background: linear-gradient(135deg, #fffdf5, #f5f5f5);
-      font-family: "Poppins", sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      text-align: center;
-    }
+    <meta charset="UTF-8">
+    <title>Lojinha de Achadinhos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    h1 {
-      font-size: 1.8rem;
-      color: #333;
-      margin-bottom: 10px;
-    }
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: "Poppins", sans-serif;
+            text-align: center;
 
-    .bag {
-      font-size: 3rem;
-      animation: swing 2.5s ease-in-out infinite;
-      transform-origin: top center;
-    }
+            /* ⭐ Fundo com imagem suave */
+            background: 
+                linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
+                url("https://carlosestudos.github.io/lojinha-de-achadinhos/carrinho.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
 
-    @keyframes swing {
-      0% { transform: rotate(0deg); }
-      25% { transform: rotate(10deg); }
-      50% { transform: rotate(0deg); }
-      75% { transform: rotate(-10deg); }
-      100% { transform: rotate(0deg); }
-    }
+        .bag {
+            font-size: 3.5rem;
+            animation: swing 2.5s infinite ease-in-out;
+        }
 
-    p {
-      font-size: 1.1rem;
-      color: #555;
-      margin-bottom: 20px;
-    }
+        @keyframes swing {
+            0% { transform: rotate(0deg); }
+            50% { transform: rotate(8deg); }
+            100% { transform: rotate(0deg); }
+        }
 
-    .button {
-      display: block;
-      width: 85%;
-      max-width: 320px;
-      margin: 10px auto;
-      padding: 15px;
-      border: none;
-      border-radius: 12px;
-      font-size: 1.1rem;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      text-decoration: none;
-    }
+        h1 {
+            font-size: 2rem;
+            color: #222;
+            font-weight: bold;
+            margin: 10px 0;
+        }
 
-    .button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
-    }
+        p {
+            color: #444;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
 
-    .shopee {
-      background-color: #ee4d2d;
-    }
+        .btn {
+            display: block;
+            width: 260px;
+            padding: 14px;
+            margin: 10px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
 
-    footer {
-      font-size: 0.9rem;
-      color: #777;
-      margin-top: 20px;
-    }
-  </style>
+        .shopee {
+            background-color: #ff5722;
+        }
+        .shopee:hover {
+            background-color: #e64a19;
+        }
+
+        .mercado {
+            background-color: #0b5ed7; /* AZUL */
+        }
+        .mercado:hover {
+            background-color: #084298;
+        }
+    </style>
 </head>
+
 <body>
 
-  <div class="bag">🛍️</div>
-  <h1>Lojinha de Achadinhos Super Promoções</h1>
-  <p>Confira as melhores ofertas nas principais lojas online!</p>
+    <div class="bag">🛍️</div>
 
-  <!-- Shopee -->
-  <a href="https://s.shopee.com.br/AUimiY02NH" class="button shopee" target="_blank">🧡 Achadinhos na Shopee</a>
+    <h1>Lojinha de Achadinhos</h1>
 
- <footer>© 2025 Lojinha de Achadinhos Super Promoções — Feito com 💛 por Carlos</footer>
+    <p>Confira as melhores ofertas nas principais lojas online</p>
+
+    <a class="btn shopee" href="https://s.shopee.com.br/AUimiY02NH" target="_blank">
+        🧡 Achadinhos na Shopee
+    </a>
+
+    <a class="btn mercado" href="https://biolivre.com.br/achadoscarlos" target="_blank">
+        🔵 Achadinhos Mercado Livre
+    </a>
 
 </body>
 </html>
+
