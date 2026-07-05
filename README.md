@@ -2,9 +2,21 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Lojinha de Achadinhos</title>
+   <title>🛒 Lojinha de Achadinhos | Shopee • Mercado Livre</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="🔥 Ofertas incríveis da Shopee e Mercado Livre! Produtos selecionados com preços baixos todos os dias.">
 
+<meta property="og:title" content="🛒 Lojinha de Achadinhos | Shopee e Mercado Livre">
+<meta property="og:description" content="🔥 Promoções imperdíveis das maiores lojas online. Clique e confira!">
+<meta property="og:image" content="https://carlosestudos.github.io/lojinha-de-achadinhos/capa-lojinha.png.png">
+<meta property="og:url" content="https://carlosestudos.github.io/lojinha-de-achadinhos/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="🛒 Lojinha de Achadinhos">
+<meta name="twitter:description" content="As melhores ofertas da Shopee e Mercado Livre.">
+<meta name="twitter:image" content="https://carlosestudos.github.io/lojinha-de-achadinhos/capa-lojinha.png.png">
     <style>
         body {
             margin: 0;
