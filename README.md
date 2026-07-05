@@ -8,8 +8,8 @@
 
 <meta property="og:title" content="🛒 Lojinha de Achadinhos | Shopee e Mercado Livre">
 <meta property="og:description" content="🔥 Promoções imperdíveis das maiores lojas online. Clique e confira!">
-<meta property="og:image" content="https://carlosestudos.github.io/lojinha-de-achadinhos/capa-lojinha.png.png">
-<meta property="og:image:secure_url" content="https://carlosestudos.github.io/lojinha-de-achadinhos/capa-lojinha.png.png">
+<meta property="og:image" content="https://carlosestudos.github.io/lojinha-de-achadinhos/capa-lojinha.png">
+<meta property="og:image:secure_url" content="https://carlosestudos.github.io/lojinha-de-achadinhos/capa-lojinha.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -21,7 +21,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="🛒 Lojinha de Achadinhos">
 <meta name="twitter:description" content="As melhores ofertas da Shopee e Mercado Livre.">
-<meta name="twitter:image" content="https://carlosestudos.github.io/lojinha-de-achadinhos/capa-lojinha.png.png">
+<meta name="twitter:image" content="https://carlosestudos.github.io/lojinha-de-achadinhos/capa-lojinha.png">
     <style>
         body {
             margin: 0;
