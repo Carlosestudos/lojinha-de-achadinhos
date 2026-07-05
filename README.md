@@ -9,8 +9,13 @@
 <meta property="og:title" content="🛒 Lojinha de Achadinhos | Shopee e Mercado Livre">
 <meta property="og:description" content="🔥 Promoções imperdíveis das maiores lojas online. Clique e confira!">
 <meta property="og:image" content="https://carlosestudos.github.io/lojinha-de-achadinhos/capa-lojinha.png.png">
+<meta property="og:image:secure_url" content="https://carlosestudos.github.io/lojinha-de-achadinhos/capa-lojinha.png.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:url" content="https://carlosestudos.github.io/lojinha-de-achadinhos/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Lojinha de Achadinhos">
 <meta property="og:locale" content="pt_BR">
 
 <meta name="twitter:card" content="summary_large_image">
