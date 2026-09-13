@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lojinha de Achadinhos | As melhores ofertas</title>
   
-  <!-- Estilos e Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -29,7 +28,6 @@
       position: relative;
     }
 
-    /* VÍDEO DE FUNDO */
     .bg-video {
       position: fixed;
       top: 50%;
@@ -41,10 +39,9 @@
       z-index: -2;
       transform: translate(-50%, -50%);
       object-fit: cover;
-      filter: brightness(0.65) blur(2px); /* Suaviza o vídeo para destacar o texto */
+      filter: brightness(0.65) blur(2px);
     }
 
-    /* MÁSCARA ESCURA SOBRE O VÍDEO */
     .bg-overlay {
       position: fixed;
       top: 0;
@@ -55,7 +52,6 @@
       z-index: -1;
     }
 
-    /* CONTAINER PRINCIPAL */
     .container {
       width: 90%;
       max-width: 700px;
@@ -104,7 +100,6 @@
       line-height: 1.5;
     }
 
-    /* BOTOES DAS LOJAS */
     .buttons-wrapper {
       display: flex;
       flex-direction: column;
@@ -149,7 +144,6 @@
       box-shadow: 0 6px 20px rgba(255, 230, 0, 0.4);
     }
 
-    /* ESTRUTURA PARA FUTURAS OFERTAS (VITRINE) */
     .offers-section {
       border-top: 1px solid rgba(255, 255, 255, 0.2);
       padding-top: 25px;
@@ -185,7 +179,6 @@
       text-align: center;
     }
 
-    /* RESPONSIVIDADE */
     @media (min-width: 600px) {
       .buttons-wrapper {
         flex-direction: row;
@@ -198,16 +191,13 @@
 </head>
 <body>
 
-  <!-- VÍDEO DE FUNDO EM LOOP -->
   <video autoplay loop muted playsinline class="bg-video">
     <source src="fundo-lojinha.mp4" type="video/mp4">
     Seu navegador não suporta vídeos em HTML5.
   </video>
 
-  <!-- MÁSCARA ESCURA DE CONTRASTE -->
   <div class="bg-overlay"></div>
 
-  <!-- CONTEÚDO PRINCIPAL -->
   <div class="container">
     <span class="badge">Ofertas Exclusivas</span>
     <h1>Lojinha de Achadinhos</h1>
@@ -217,7 +207,6 @@
       Reunimos os melhores achadinhos e promoções imperdíveis da <strong>Shopee</strong> e do <strong>Mercado Livre</strong> em um único endereço seguro para facilitar suas compras.
     </p>
 
-    <!-- BOTÕES CLICÁVEIS -->
     <div class="buttons-wrapper">
       <a href="https://s.shopee.com.br/AUimiY02NH" target="_blank" rel="noopener noreferrer" class="btn btn-shopee">
         Ir para Shopee
@@ -227,7 +216,6 @@
       </a>
     </div>
 
-    <!-- ESTRUTURA PREPARADA PARA FUTURAS OFERTAS -->
     <div class="offers-section">
       <h2>Achadinhos em Destaque</h2>
       <div class="offers-grid">
