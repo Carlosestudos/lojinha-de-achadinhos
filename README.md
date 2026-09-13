@@ -1,117 +1,251 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-   <title>🛒 Lojinha de Achadinhos | Shopee • Mercado Livre</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="🔥 Ofertas incríveis da Shopee e Mercado Livre! Produtos selecionados com preços baixos todos os dias.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lojinha de Achadinhos | As melhores ofertas</title>
+  
+  <!-- Estilos e Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-<meta property="og:title" content="🛒 Lojinha de Achadinhos | Shopee e Mercado Livre">
-<meta property="og:description" content="🔥 Promoções imperdíveis das maiores lojas online. Clique e confira!">
-<meta property="og:image" content="https://carlosestudos.github.io/lojinha-de-achadinhos/capa-lojinha.png">
-<meta property="og:image:secure_url" content="https://carlosestudos.github.io/lojinha-de-achadinhos/capa-lojinha.png">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:url" content="https://carlosestudos.github.io/lojinha-de-achadinhos/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Lojinha de Achadinhos">
-<meta property="og:locale" content="pt_BR">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="🛒 Lojinha de Achadinhos">
-<meta name="twitter:description" content="As melhores ofertas da Shopee e Mercado Livre.">
-<meta name="twitter:image" content="https://carlosestudos.github.io/lojinha-de-achadinhos/capa-lojinha.png">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-family: "Poppins", sans-serif;
-            text-align: center;
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+      min-height: 100vh;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+    }
 
-            /* ⭐ Fundo com imagem suave */
-            background: 
-                linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
-                url("https://carlosestudos.github.io/lojinha-de-achadinhos/carrinho.jpg");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+    /* VÍDEO DE FUNDO */
+    .bg-video {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -2;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      filter: brightness(0.65) blur(2px); /* Suaviza o vídeo para destacar o texto */
+    }
 
-        .bag {
-            font-size: 3.5rem;
-            animation: swing 2.5s infinite ease-in-out;
-        }
+    /* MÁSCARA ESCURA SOBRE O VÍDEO */
+    .bg-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: -1;
+    }
 
-        @keyframes swing {
-            0% { transform: rotate(0deg); }
-            50% { transform: rotate(8deg); }
-            100% { transform: rotate(0deg); }
-        }
+    /* CONTAINER PRINCIPAL */
+    .container {
+      width: 90%;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 35px 25px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      text-align: center;
+    }
 
-        h1 {
-            font-size: 2rem;
-            color: #222;
-            font-weight: bold;
-            margin: 10px 0;
-        }
+    .badge {
+      display: inline-block;
+      background: #ff4757;
+      color: #fff;
+      padding: 6px 16px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
 
-        p {
-            color: #444;
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
 
-        .btn {
-            display: block;
-            width: 260px;
-            padding: 14px;
-            margin: 10px;
-            text-decoration: none;
-            color: #fff;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
+    p.subtitle {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #f1f2f6;
+      margin-bottom: 15px;
+    }
 
-        .shopee {
-            background-color: #ff5722;
-        }
-        .shopee:hover {
-            background-color: #e64a19;
-        }
+    p.description {
+      font-size: 0.95rem;
+      color: #dfe4ea;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
 
-        .mercado {
-            background-color: #0b5ed7; /* AZUL */
-        }
-        .mercado:hover {
-            background-color: #084298;
-        }
-    </style>
+    /* BOTOES DAS LOJAS */
+    .buttons-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 35px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px 20px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-shopee {
+      background-color: #EE4D2D;
+      color: #ffffff;
+    }
+
+    .btn-shopee:hover {
+      background-color: #ff5e3a;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(238, 77, 45, 0.4);
+    }
+
+    .btn-mercadolivre {
+      background-color: #FFE600;
+      color: #2D3277;
+    }
+
+    .btn-mercadolivre:hover {
+      background-color: #fff000;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 230, 0, 0.4);
+    }
+
+    /* ESTRUTURA PARA FUTURAS OFERTAS (VITRINE) */
+    .offers-section {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 25px;
+      margin-top: 10px;
+    }
+
+    .offers-section h2 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .offers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+    }
+
+    .card-placeholder {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px dashed rgba(255, 255, 255, 0.3);
+      font-size: 0.85rem;
+      color: #ccc;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.8);
+      text-align: center;
+    }
+
+    /* RESPONSIVIDADE */
+    @media (min-width: 600px) {
+      .buttons-wrapper {
+        flex-direction: row;
+      }
+      .btn {
+        flex: 1;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-    <div class="bag">🛍️</div>
+  <!-- VÍDEO DE FUNDO EM LOOP -->
+  <video autoplay loop muted playsinline class="bg-video">
+    <source src="fundo-lojinha.mp4" type="video/mp4">
+    Seu navegador não suporta vídeos em HTML5.
+  </video>
 
+  <!-- MÁSCARA ESCURA DE CONTRASTE -->
+  <div class="bg-overlay"></div>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <div class="container">
+    <span class="badge">Ofertas Exclusivas</span>
     <h1>Lojinha de Achadinhos</h1>
+    <p class="subtitle">As melhores ofertas com ótimo custo-benefício!</p>
+    
+    <p class="description">
+      Reunimos os melhores achadinhos e promoções imperdíveis da <strong>Shopee</strong> e do <strong>Mercado Livre</strong> em um único endereço seguro para facilitar suas compras.
+    </p>
 
-    <p>Confira as melhores ofertas nas principais lojas online</p>
+    <!-- BOTÕES CLICÁVEIS -->
+    <div class="buttons-wrapper">
+      <a href="https://s.shopee.com.br/AUimiY02NH" target="_blank" rel="noopener noreferrer" class="btn btn-shopee">
+        Ir para Shopee
+      </a>
+      <a href="https://biolivre.com.br/achadoscarlos" target="_blank" rel="noopener noreferrer" class="btn btn-mercadolivre">
+        Ir para Mercado Livre
+      </a>
+    </div>
 
-    <a class="btn shopee" href="https://s.shopee.com.br/AUimiY02NH" target="_blank">
-        🧡 Achadinhos na Shopee
-    </a>
+    <!-- ESTRUTURA PREPARADA PARA FUTURAS OFERTAS -->
+    <div class="offers-section">
+      <h2>Achadinhos em Destaque</h2>
+      <div class="offers-grid">
+        <div class="card-placeholder">
+          📍 Futura Oferta #1<br>
+          <small>(Em breve novidades)</small>
+        </div>
+        <div class="card-placeholder">
+          📍 Futura Oferta #2<br>
+          <small>(Em breve novidades)</small>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <a class="btn mercado" href="https://biolivre.com.br/achadoscarlos" target="_blank">
-        🔵 Achadinhos Mercado Livre
-    </a>
+  <footer>
+    <p>&copy; 2026 Lojinha de Achadinhos - Todos os direitos reservados.</p>
+  </footer>
 
 </body>
 </html>
-
