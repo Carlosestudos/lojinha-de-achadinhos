@@ -16,94 +16,58 @@
       padding: 0;
     }
 
-    body {
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
       font-family: 'Poppins', sans-serif;
-      color: #ffffff;
-      min-height: 100vh;
-      overflow-x: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
+      background-color: #000000;
     }
 
-    /* Vídeo de fundo 100% visível e sem desfoque */
+    /* Vídeo ocupa 100% da tela de forma limpa */
     .bg-video {
-      position: fixed;
+      position: absolute;
       top: 50%;
       left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      z-index: -1;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
       transform: translate(-50%, -50%);
-      object-fit: cover;
-    }
-
-    /* Container transparente apenas para posicionar os botões */
-    .container {
-      width: 90%;
-      max-width: 500px;
-      margin: 0 auto;
-      padding: 20px;
-      text-align: center;
       z-index: 1;
     }
 
-    .buttons-wrapper {
+    /* Container de botões sem fundo/tarja */
+    .buttons-layer {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      max-width: 600px;
       display: flex;
-      flex-direction: column;
-      gap: 15px;
+      justify-content: center;
+      gap: 20px;
+      z-index: 2;
     }
 
-    .btn {
+    /* Botões interativos transparentes com brilho suave ao passar o rato */
+    .btn-click {
+      flex: 1;
+      height: 55px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      width: 100%;
-      padding: 16px 20px;
-      font-size: 1.1rem;
-      font-weight: 700;
       text-decoration: none;
-      border-radius: 30px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      border-radius: 28px;
+      transition: all 0.2s ease-in-out;
+      background: rgba(255, 255, 255, 0.01);
+      border: 2px solid transparent;
     }
 
-    .btn-shopee {
-      background-color: #EE4D2D;
-      color: #ffffff;
-      border: 2px solid #ffffff;
-    }
-
-    .btn-shopee:hover {
-      background-color: #ff5e3a;
-      transform: scale(1.03);
-      box-shadow: 0 6px 20px rgba(238, 77, 45, 0.6);
-    }
-
-    .btn-mercadolivre {
-      background-color: #FFE600;
-      color: #2D3277;
-      border: 2px solid #2D3277;
-    }
-
-    .btn-mercadolivre:hover {
-      background-color: #fff000;
-      transform: scale(1.03);
-      box-shadow: 0 6px 20px rgba(255, 230, 0, 0.6);
-    }
-
-    @media (min-width: 600px) {
-      .buttons-wrapper {
-        flex-direction: row;
-      }
-      .btn {
-        flex: 1;
-      }
+    .btn-click:hover {
+      transform: scale(1.04);
+      border-color: rgba(255, 255, 255, 0.6);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
     }
   </style>
 </head>
@@ -114,15 +78,9 @@
     Seu navegador não suporta vídeos em HTML5.
   </video>
 
-  <div class="container">
-    <div class="buttons-wrapper">
-      <a href="https://collshp.com/chztrlojinha?view=storefront" target="_blank" rel="noopener noreferrer" class="btn btn-shopee">
-        Ir para Shopee
-      </a>
-      <a href="https://mercadolivre.com/sec/1nNnSoA" target="_blank" rel="noopener noreferrer" class="btn btn-mercadolivre">
-        Ir para Mercado Livre
-      </a>
-    </div>
+  <div class="buttons-layer">
+    <a href="https://collshp.com/chztrlojinha?view=storefront" target="_blank" rel="noopener noreferrer" class="btn-click" title="Ir para Shopee"></a>
+    <a href="https://mercadolivre.com/sec/1nNnSoA" target="_blank" rel="noopener noreferrer" class="btn-click" title="Ir para Mercado Livre"></a>
   </div>
 
 </body>
