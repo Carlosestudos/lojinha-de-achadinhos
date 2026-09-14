@@ -24,10 +24,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       position: relative;
     }
 
+    /* Vídeo de fundo 100% visível e sem desfoque */
     .bg-video {
       position: fixed;
       top: 50%;
@@ -36,75 +37,25 @@
       min-height: 100%;
       width: auto;
       height: auto;
-      z-index: -2;
+      z-index: -1;
       transform: translate(-50%, -50%);
       object-fit: cover;
-      filter: brightness(0.7) blur(1px);
     }
 
-    .bg-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: -1;
-    }
-
+    /* Container transparente apenas para posicionar os botões */
     .container {
       width: 90%;
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 35px 25px;
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
       text-align: center;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #ff4757;
-      color: #fff;
-      padding: 6px 16px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      border-radius: 20px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 15px;
-    }
-
-    h1 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      margin-bottom: 10px;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-    p.subtitle {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #f1f2f6;
-      margin-bottom: 15px;
-    }
-
-    p.description {
-      font-size: 0.95rem;
-      color: #dfe4ea;
-      margin-bottom: 30px;
-      line-height: 1.5;
+      z-index: 1;
     }
 
     .buttons-wrapper {
       display: flex;
       flex-direction: column;
       gap: 15px;
-      margin-bottom: 35px;
     }
 
     .btn {
@@ -117,66 +68,33 @@
       font-size: 1.1rem;
       font-weight: 700;
       text-decoration: none;
-      border-radius: 12px;
+      border-radius: 30px;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
 
     .btn-shopee {
       background-color: #EE4D2D;
       color: #ffffff;
+      border: 2px solid #ffffff;
     }
 
     .btn-shopee:hover {
       background-color: #ff5e3a;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(238, 77, 45, 0.4);
+      transform: scale(1.03);
+      box-shadow: 0 6px 20px rgba(238, 77, 45, 0.6);
     }
 
     .btn-mercadolivre {
       background-color: #FFE600;
       color: #2D3277;
+      border: 2px solid #2D3277;
     }
 
     .btn-mercadolivre:hover {
       background-color: #fff000;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255, 230, 0, 0.4);
-    }
-
-    .offers-section {
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
-      padding-top: 25px;
-      margin-top: 10px;
-    }
-
-    .offers-section h2 {
-      font-size: 1.3rem;
-      margin-bottom: 15px;
-      font-weight: 700;
-    }
-
-    .offers-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 15px;
-    }
-
-    .card-placeholder {
-      background: rgba(0, 0, 0, 0.3);
-      padding: 15px;
-      border-radius: 10px;
-      border: 1px dashed rgba(255, 255, 255, 0.3);
-      font-size: 0.85rem;
-      color: #ccc;
-    }
-
-    footer {
-      margin-top: auto;
-      padding: 20px;
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.8);
-      text-align: center;
+      transform: scale(1.03);
+      box-shadow: 0 6px 20px rgba(255, 230, 0, 0.6);
     }
 
     @media (min-width: 600px) {
@@ -196,17 +114,7 @@
     Seu navegador não suporta vídeos em HTML5.
   </video>
 
-  <div class="bg-overlay"></div>
-
   <div class="container">
-    <span class="badge">Ofertas Exclusivas</span>
-    <h1>Lojinha de Achadinhos</h1>
-    <p class="subtitle">As melhores ofertas com ótimo custo-benefício!</p>
-    
-    <p class="description">
-      Reunimos os melhores achadinhos e promoções imperdíveis da <strong>Shopee</strong> e do <strong>Mercado Livre</strong> em um único endereço seguro para facilitar suas compras.
-    </p>
-
     <div class="buttons-wrapper">
       <a href="https://collshp.com/chztrlojinha?view=storefront" target="_blank" rel="noopener noreferrer" class="btn btn-shopee">
         Ir para Shopee
@@ -215,25 +123,7 @@
         Ir para Mercado Livre
       </a>
     </div>
-
-    <div class="offers-section">
-      <h2>Achadinhos em Destaque</h2>
-      <div class="offers-grid">
-        <div class="card-placeholder">
-          📍 Futura Oferta #1<br>
-          <small>(Em breve novidades)</small>
-        </div>
-        <div class="card-placeholder">
-          📍 Futura Oferta #2<br>
-          <small>(Em breve novidades)</small>
-        </div>
-      </div>
-    </div>
   </div>
-
-  <footer>
-    <p>&copy; 2026 Lojinha de Achadinhos - Todos os direitos reservados.</p>
-  </footer>
 
 </body>
 </html>
