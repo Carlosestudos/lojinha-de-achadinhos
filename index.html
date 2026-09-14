@@ -39,7 +39,7 @@
       z-index: -2;
       transform: translate(-50%, -50%);
       object-fit: cover;
-      filter: brightness(0.65) blur(2px);
+      filter: brightness(0.7) blur(1px);
     }
 
     .bg-overlay {
@@ -48,7 +48,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.45);
+      background: rgba(0, 0, 0, 0.4);
       z-index: -1;
     }
 
@@ -208,10 +208,10 @@
     </p>
 
     <div class="buttons-wrapper">
-      <a href="https://s.shopee.com.br/AUimiY02NH" target="_blank" rel="noopener noreferrer" class="btn btn-shopee">
+      <a href="https://collshp.com/chztrlojinha?view=storefront" target="_blank" rel="noopener noreferrer" class="btn btn-shopee">
         Ir para Shopee
       </a>
-      <a href="https://biolivre.com.br/achadoscarlos" target="_blank" rel="noopener noreferrer" class="btn btn-mercadolivre">
+      <a href="https://mercadolivre.com/sec/1nNnSoA" target="_blank" rel="noopener noreferrer" class="btn btn-mercadolivre">
         Ir para Mercado Livre
       </a>
     </div>
