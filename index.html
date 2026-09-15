@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Lojinha de Achadinhos | As melhores ofertas</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,51 +17,60 @@
     }
 
     html, body {
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       overflow: hidden;
       font-family: 'Poppins', sans-serif;
       background-color: #000000;
     }
 
-    /* Vídeo preenche 100% da tela no PC e Mobile */
+    /* Container principal para alinhar perfeitamente vídeo e botões */
+    .viewport-wrapper {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Regulação do Vídeo para PC e Celular */
     .bg-video {
       position: absolute;
       top: 50%;
       left: 50%;
       min-width: 100%;
       min-height: 100%;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover; /* Garante tela cheia sem bordas pretas */
+      width: auto;
+      height: auto;
+      object-fit: cover;
       transform: translate(-50%, -50%);
       z-index: 1;
-      image-rendering: -webkit-optimize-contrast;
     }
 
-    /* Camada dos botões ajustada */
+    /* Regulação da camada de botões */
     .buttons-layer {
       position: absolute;
-      top: 48%;
+      top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 85%;
-      max-width: 520px;
+      max-width: 500px;
       display: flex;
       justify-content: center;
       gap: 15px;
       z-index: 2;
     }
 
-    /* Áreas de clique transparentes alinhadas */
+    /* Botões transparentes com regulagem de área de clique */
     .btn-click {
       flex: 1;
-      height: 50px;
+      height: 52px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      border-radius: 25px;
+      border-radius: 30px;
       transition: all 0.2s ease-in-out;
       background: rgba(255, 255, 255, 0.01);
       border: 2px solid transparent;
@@ -73,36 +82,38 @@
       box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
     }
 
-    /* Adaptação específica para Celular (Telas em Pé / Portátil) */
+    /* Ajuste fino específico para Celular (Mobile) */
     @media (max-width: 768px) {
       .bg-video {
-        object-fit: cover;
+        object-fit: contain; /* Mantém a proporção exata da arte no celular */
+        width: 100%;
+        height: 100%;
       }
-      
+
       .buttons-layer {
-        top: 46%;
-        width: 90%;
-        gap: 10px;
+        top: 48%; /* Alinha com a posição exata dos botões da arte no celular */
+        width: 88%;
+        gap: 12px;
       }
 
       .btn-click {
-        height: 45px;
+        height: 44px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Vídeo em Tela Cheia -->
-  <video autoplay loop muted playsinline class="bg-video">
-    <source src="fundo-lojinha.mp4" type="video/mp4">
-    Seu navegador não suporta vídeos em HTML5.
-  </video>
+  <div class="viewport-wrapper">
+    <video autoplay loop muted playsinline class="bg-video">
+      <source src="fundo-lojinha.mp4" type="video/mp4">
+      Seu navegador não suporta vídeos em HTML5.
+    </video>
 
-  <!-- Botões transparentes sobrepostos -->
-  <div class="buttons-layer">
-    <a href="https://collshp.com/chztrlojinha?view=storefront" target="_blank" rel="noopener noreferrer" class="btn-click" title="Ir para Shopee"></a>
-    <a href="https://mercadolivre.com/sec/1nNnSoA" target="_blank" rel="noopener noreferrer" class="btn-click" title="Ir para Mercado Livre"></a>
+    <div class="buttons-layer">
+      <a href="https://collshp.com/chztrlojinha?view=storefront" target="_blank" rel="noopener noreferrer" class="btn-click" title="Ir para Shopee"></a>
+      <a href="https://mercadolivre.com/sec/1nNnSoA" target="_blank" rel="noopener noreferrer" class="btn-click" title="Ir para Mercado Livre"></a>
+    </div>
   </div>
 
 </body>
