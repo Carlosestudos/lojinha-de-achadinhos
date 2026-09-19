@@ -3,147 +3,141 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Lojinha de Achadinhos | As Melhores Ofertas</title>
+  <title>Lojinha de Achadinhos</title>
   
+  <!-- Configurações de Aplicativo (PWA / WebApp) -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0f172a">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
 
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      -webkit-tap-highlight-color: transparent;
     }
 
-    body {
-      font-family: 'Poppins', sans-serif;
+    html, body {
+      width: 100%;
+      height: 100%;
       background-color: #0f172a;
-      color: #ffffff;
-      min-height: 100vh;
-      width: 100vw;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+    }
+
+    /* Container Principal - Preenche a tela toda no celular */
+    .app-container {
+      position: relative;
+      width: 100%;
+      max-width: 500px; /* Largura ideal para celular e notebook */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       padding: 10px;
     }
 
-    .main-wrapper {
-      width: 100%;
-      max-width: 650px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    /* Contêiner da Mídia com Botões Transparentes Posicionados por Cima */
-    .banner-container {
+    /* Card da Mídia / Banner */
+    .banner-card {
       position: relative;
       width: 100%;
-      border-radius: 16px;
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      margin-bottom: 15px;
-      border: 1px solid #334155;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+      background-color: #000;
+      border: 2px solid #1e293b;
     }
 
-    .banner-container video, .banner-container img {
+    .banner-card video, .banner-card img {
       width: 100%;
       height: auto;
       display: block;
     }
 
-    /* Camada para Botões Clicáveis por cima do Banner */
-    .clickable-overlay {
+    /* Camada Interativa com Botões Sobrepostos */
+    .overlay-layer {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      pointer-events: none; /* Deixa o fundo livre e ativa apenas os links */
     }
 
-    /* Botão Shopee Clicável Transparente sobre o Botão do Banner */
-    .hotspot-shopee {
+    /* 🟢 BOTÃO WHATSAPP NO TOPO DENTRO DO BANNER */
+    .btn-top-whatsapp {
       position: absolute;
-      top: 38%;
-      left: 32%;
-      width: 17%;
-      height: 12%;
-      pointer-events: auto;
-      border-radius: 20px;
-      cursor: pointer;
-    }
-
-    /* Botão Mercado Livre Clicável Transparente sobre o Botão do Banner */
-    .hotspot-ml {
-      position: absolute;
-      top: 38%;
-      left: 51%;
-      width: 17%;
-      height: 12%;
-      pointer-events: auto;
-      border-radius: 20px;
-      cursor: pointer;
-    }
-
-    /* Feedback visual ao clicar/tocar no banner */
-    .hotspot-shopee:active, .hotspot-ml:active {
-      background: rgba(255, 255, 255, 0.2);
-    }
-
-    /* Lista de Botões Principais */
-    .buttons-container {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .btn {
-      width: 100%;
-      padding: 14px 20px;
-      border-radius: 30px;
+      top: 3.5%;
+      right: 3.5%;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: #ffffff;
       text-decoration: none;
       font-weight: 800;
-      font-size: 1rem;
+      font-size: 0.72rem;
+      padding: 6px 12px;
+      border-radius: 20px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      transition: transform 0.15s ease-in-out;
+      gap: 5px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      animation: pulse 2s infinite;
+      z-index: 10;
     }
 
-    .btn:active {
-      transform: scale(0.97);
+    .btn-top-whatsapp svg {
+      width: 14px;
+      height: 14px;
+      fill: #ffffff;
     }
 
-    .btn-whatsapp {
-      background-color: #25d366;
-      color: #ffffff;
+    /* Efeito Pulsante no Botão do WhatsApp */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
     }
 
-    .btn-shopee {
-      background-color: #ee4d2d;
-      color: #ffffff;
+    /* 🟠 HOTSPOT CLICÁVEL - SHOPEE (Sobreposto ao botão do banner) */
+    .hotspot-shopee {
+      position: absolute;
+      top: 47.5%;
+      left: 32.5%;
+      width: 16.5%;
+      height: 8.5%;
+      border-radius: 25px;
+      cursor: pointer;
+      z-index: 5;
     }
 
-    .btn-ml {
-      background-color: #ffe600;
-      color: #2d3277;
+    /* 🟡 HOTSPOT CLICÁVEL - MERCADO LIVRE (Sobreposto ao botão do banner) */
+    .hotspot-ml {
+      position: absolute;
+      top: 47.5%;
+      left: 50.8%;
+      width: 16.5%;
+      height: 8.5%;
+      border-radius: 25px;
+      cursor: pointer;
+      z-index: 5;
     }
 
-    .btn-icon {
-      width: 22px;
-      height: 22px;
-      fill: currentColor;
+    /* Toque visual ao pressionar no celular */
+    .hotspot-shopee:active, .hotspot-ml:active {
+      background-color: rgba(255, 255, 255, 0.25);
     }
 
-    .footer-text {
-      margin-top: 15px;
-      font-size: 0.75rem;
+    .app-footer {
+      margin-top: 12px;
+      font-size: 0.7rem;
       color: #64748b;
       text-align: center;
     }
@@ -151,46 +145,32 @@
 </head>
 <body>
 
-  <div class="main-wrapper">
+  <div class="app-container">
 
-    <!-- BANNER COM BOTÕES CLICÁVEIS SOBREPOSTOS -->
-    <div class="banner-container">
+    <!-- BANNER ÚNICO COM TODOS OS BOTÕES INTEGRADOS -->
+    <div class="banner-card">
       <video autoplay loop muted playsinline>
         <source src="fundo-lojinha.mp4" type="video/mp4">
         Seu navegador não suporta vídeos.
       </video>
 
-      <div class="clickable-overlay">
-        <!-- Áreas Clicáveis em cima da Imagem/Vídeo -->
-        <a href="https://collshp.com/chztrlojinha?view=storefront" target="_blank" rel="noopener noreferrer" class="hotspot-shopee" title="Shopee"></a>
-        <a href="https://mercadolivre.com/sec/1nNnSoA" target="_blank" rel="noopener noreferrer" class="hotspot-ml" title="Mercado Livre"></a>
+      <div class="overlay-layer">
+        <!-- Botão Flutuante do WhatsApp dentro do Banner -->
+        <a href="https://chat.whatsapp.com/KyKtk9fRNCM9AAGgERy6Z0" target="_blank" rel="noopener noreferrer" class="btn-top-whatsapp">
+          <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.842-1.001z"/></svg>
+          Chama no WhatsApp
+        </a>
+
+        <!-- Área Clicável da Shopee -->
+        <a href="https://collshp.com/chztrlojinha?view=storefront" target="_blank" rel="noopener noreferrer" class="hotspot-shopee" title="Ir para Shopee"></a>
+
+        <!-- Área Clicável do Mercado Livre -->
+        <a href="https://mercadolivre.com/sec/1nNnSoA" target="_blank" rel="noopener noreferrer" class="hotspot-ml" title="Ir para Mercado Livre"></a>
       </div>
     </div>
 
-    <!-- BOTÕES EXTERNOS DE ACESSO DIRETO -->
-    <div class="buttons-container">
-      
-      <!-- WHATSAPP -->
-      <a href="https://chat.whatsapp.com/KyKtk9fRNCM9AAGgERy6Z0" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
-        <svg class="btn-icon" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.842-1.001z"/></svg>
-        Entrar no Grupo VIP do WhatsApp
-      </a>
+    <p class="app-footer">Lojinha de Achadinhos © Todos os direitos reservados.</p>
 
-      <!-- SHOPEE -->
-      <a href="https://collshp.com/chztrlojinha?view=storefront" target="_blank" rel="noopener noreferrer" class="btn btn-shopee">
-        <svg class="btn-icon" viewBox="0 0 24 24"><path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm0 10c-2.76 0-5-2.24-5-5h2c0 1.66 1.34 3 3 3s3-1.34 3-3h2c0 2.76-2.24 5-5 5z"/></svg>
-        Ver Ofertas na Shopee
-      </a>
-
-      <!-- MERCADO LIVRE -->
-      <a href="https://mercadolivre.com/sec/1nNnSoA" target="_blank" rel="noopener noreferrer" class="btn btn-ml">
-        <svg class="btn-icon" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-        Ver Ofertas no Mercado Livre
-      </a>
-
-    </div>
-
-    <p class="footer-text">Achadinhos do Carlos © Todos os direitos reservados.</p>
   </div>
 
 </body>
