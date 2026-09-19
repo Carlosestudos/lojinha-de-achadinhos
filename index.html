@@ -2,8 +2,8 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Lojinha de Achadinhos | As melhores ofertas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lojinha de Achadinhos | As Melhores Ofertas</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,101 +16,134 @@
       padding: 0;
     }
 
-    html, body {
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
+    body {
       font-family: 'Poppins', sans-serif;
-      background-color: #000000;
-    }
-
-    .viewport-wrapper {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
+      background-color: #0f172a;
+      color: #ffffff;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
     }
 
-    /* Ajuste para Computador (Tela cheia sem distorção) */
-    .bg-video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
+    .container {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform: translate(-50%, -50%);
-      z-index: 1;
+      max-width: 480px;
+      background: #1e293b;
+      border-radius: 20px;
+      padding: 25px 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      text-align: center;
     }
 
-    /* Camada dos botões para Computador */
-    .buttons-layer {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 85%;
-      max-width: 500px;
+    .header-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #f87171;
+      margin-bottom: 5px;
+    }
+
+    .header-subtitle {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      margin-bottom: 20px;
+    }
+
+    .video-wrapper {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      border: 2px solid #334155;
+    }
+
+    .bg-video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .buttons-container {
       display: flex;
-      justify-content: center;
-      gap: 15px;
-      z-index: 2;
+      flex-direction: column;
+      gap: 12px;
     }
 
-    .btn-click {
-      flex: 1;
-      height: 52px;
+    .btn {
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 14px 20px;
+      border-radius: 12px;
       text-decoration: none;
-      border-radius: 30px;
-      transition: all 0.2s ease-in-out;
-      background: rgba(255, 255, 255, 0.01);
-      border: 2px solid transparent;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .btn-click:hover, .btn-click:active {
-      transform: scale(1.03);
-      border-color: rgba(255, 255, 255, 0.5);
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+    .btn:hover {
+      transform: translateY(-2px);
     }
 
-    /* Regulação Retrato para Celular (Exibe todo o anúncio sem cortar textos) */
-    @media (max-width: 768px) {
-      .bg-video {
-        width: 100%;
-        height: auto;
-        max-height: 100vh;
-        object-fit: contain; /* Mostra 100% da arte na tela do telemóvel */
-      }
+    /* Botão do WhatsApp (Destaque Principal) */
+    .btn-whatsapp {
+      background-color: #25d366;
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+      font-size: 1rem;
+    }
 
-      .buttons-layer {
-        top: 50%;
-        width: 82%;
-        gap: 10px;
-      }
+    .btn-shopee {
+      background-color: #ee4d2d;
+      color: #ffffff;
+    }
 
-      .btn-click {
-        height: 42px;
-      }
+    .btn-ml {
+      background-color: #ffe600;
+      color: #2d3277;
+    }
+
+    .footer-text {
+      margin-top: 20px;
+      font-size: 0.75rem;
+      color: #64748b;
     }
   </style>
 </head>
 <body>
 
-  <div class="viewport-wrapper">
-    <video autoplay loop muted playsinline class="bg-video">
-      <source src="fundo-lojinha.mp4" type="video/mp4">
-      Seu navegador não suporta vídeos em HTML5.
-    </video>
+  <div class="container">
+    <h1 class="header-title">🛍️ Lojinha de Achadinhos</h1>
+    <p class="header-subtitle">As melhores promoções reunidas em um só lugar!</p>
 
-    <div class="buttons-layer">
-      <a href="https://collshp.com/chztrlojinha?view=storefront" target="_blank" rel="noopener noreferrer" class="btn-click" title="Ir para Shopee"></a>
-      <a href="https://mercadolivre.com/sec/1nNnSoA" target="_blank" rel="noopener noreferrer" class="btn-click" title="Ir para Mercado Livre"></a>
+    <!-- Vídeo Demonstrativo -->
+    <div class="video-wrapper">
+      <video autoplay loop muted playsinline class="bg-video">
+        <source src="fundo-lojinha.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos.
+      </video>
     </div>
+
+    <!-- Botões de Ação -->
+    <div class="buttons-container">
+      <!-- LINK DO GRUPO DO WHATSAPP -->
+      <a href="SEU_LINK_DO_GRUPO_DO_WHATSAPP_AQUI" target="_blank" class="btn btn-whatsapp">
+        🟢 Entrar no Grupo Vip do WhatsApp
+      </a>
+
+      <!-- LINK SHOPEE -->
+      <a href="https://collshp.com/chztrlojinha?view=storefront" target="_blank" rel="noopener noreferrer" class="btn btn-shopee">
+        🟠 Ver Ofertas na Shopee
+      </a>
+
+      <!-- LINK MERCADO LIVRE -->
+      <a href="https://mercadolivre.com/sec/1nNnSoA" target="_blank" rel="noopener noreferrer" class="btn btn-ml">
+        🟡 Ver Ofertas no Mercado Livre
+      </a>
+    </div>
+
+    <p class="footer-text">Achadinhos do Carlos © Todos os direitos reservados.</p>
   </div>
 
 </body>
