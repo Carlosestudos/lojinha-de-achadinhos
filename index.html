@@ -5,26 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <title>Carlos Achadinhos</title>
   
-  <!-- Vinculo do arquivo Manifest para o Aplicativo PWA -->
-  <link rel="manifest" href="manifest.json">
+  <!-- Arquivo de Manifesto para o Aplicativo (PWA) -->
+  <link rel="manifest" href="https://carlosestudos.github.io/lojinha-de-achadinhos/manifest.json">
 
-  <!-- 🟢 METATAGS COM A SUA LOGO OFICIAL PARA O WHATSAPP -->
+  <!-- Meta Tags para Prévia Bonita no WhatsApp -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="🛍️ Carlos Achadinhos">
   <meta property="og:description" content="As melhores promoções da Shopee e Mercado Livre em um só lugar! Entre e confira.">
   <meta property="og:image" content="https://carlosestudos.github.io/lojinha-de-achadinhos/logo.jpg">
+  <meta property="og:image:secure_url" content="https://carlosestudos.github.io/lojinha-de-achadinhos/logo.jpg">
+  <meta property="og:image:width" content="500">
+  <meta property="og:image:height" content="500">
   <meta property="og:url" content="https://carlosestudos.github.io/lojinha-de-achadinhos/">
 
-  <!-- Configurações para virar Aplicativo no Celular -->
+  <!-- Configurações de Aplicativo para Celular -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Achadinhos">
+  <meta name="apple-mobile-web-app-title" content="Carlos Achadinhos">
   <meta name="theme-color" content="#000000">
 
-  <!-- Ícone Oficial do App na Tela do Celular -->
-  <link rel="apple-touch-icon" href="logo.jpg">
-  <link rel="icon" type="image/jpeg" href="logo.jpg">
+  <!-- Ícone da Logo para a Tela do Celular -->
+  <link rel="apple-touch-icon" sizes="180x180" href="https://carlosestudos.github.io/lojinha-de-achadinhos/logo.jpg">
+  <link rel="icon" type="image/jpeg" sizes="192x192" href="https://carlosestudos.github.io/lojinha-de-achadinhos/logo.jpg">
+  <link rel="shortcut icon" href="https://carlosestudos.github.io/lojinha-de-achadinhos/logo.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,6 +54,7 @@
       overflow-x: hidden;
     }
 
+    /* Ocupa a largura total no celular e centraliza bem no PC */
     .app-viewport {
       position: relative;
       width: 100vw;
@@ -84,6 +89,7 @@
       height: 100%;
     }
 
+    /* Botão Flutuante do WhatsApp dentro do Banner */
     .btn-whatsapp-overlay {
       position: absolute;
       top: 4%;
@@ -109,6 +115,7 @@
       fill: #ffffff;
     }
 
+    /* Área clicável da Shopee sobre o botão do banner */
     .hotspot-shopee {
       position: absolute;
       top: 47%;
@@ -120,6 +127,7 @@
       z-index: 5;
     }
 
+    /* Área clicável do Mercado Livre sobre o botão do banner */
     .hotspot-ml {
       position: absolute;
       top: 47%;
@@ -154,11 +162,13 @@
       </video>
 
       <div class="overlay-actions">
+        <!-- Botão Flutuante do WhatsApp -->
         <a href="https://chat.whatsapp.com/KyKtk9fRNCM9AAGgERy6Z0" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-overlay">
           <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.842-1.001z"/></svg>
           Chama no WhatsApp
         </a>
 
+        <!-- Botões Clicáveis por cima da Arte -->
         <a href="https://collshp.com/chztrlojinha?view=storefront" target="_blank" rel="noopener noreferrer" class="hotspot-shopee" title="Shopee"></a>
         <a href="https://mercadolivre.com/sec/1nNnSoA" target="_blank" rel="noopener noreferrer" class="hotspot-ml" title="Mercado Livre"></a>
       </div>
