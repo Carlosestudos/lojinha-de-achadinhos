@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Lojinha de Achadinhos | As melhores ofertas</title>
+  <title>Lojinha de Achadinhos | As Melhores Ofertas</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800;900&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -18,79 +18,93 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #111827;
+      background-color: #0f172a;
       color: #ffffff;
       min-height: 100vh;
-      width: 100%;
+      width: 100vw;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      padding: 15px 10px;
+      justify-content: center;
+      padding: 10px;
     }
 
     .main-wrapper {
       width: 100%;
-      max-width: 600px; /* Preenche a tela no celular sem criar caixinhas isoladas */
+      max-width: 650px;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    /* Cabeçalho */
-    .header-section {
-      text-align: center;
-      margin-bottom: 12px;
+    /* Contêiner da Mídia com Botões Transparentes Posicionados por Cima */
+    .banner-container {
+      position: relative;
       width: 100%;
-    }
-
-    .header-title {
-      font-size: 1.6rem;
-      font-weight: 900;
-      color: #ff5252;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .header-subtitle {
-      font-size: 0.85rem;
-      color: #9ca3af;
-      margin-top: 2px;
-      font-weight: 500;
-    }
-
-    /* Vídeo / Mídia Principal */
-    .media-container {
-      width: 100%;
-      border-radius: 12px;
+      border-radius: 16px;
       overflow: hidden;
-      margin-bottom: 16px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-      background-color: #000000;
-      border: 1px solid #1f2937;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      margin-bottom: 15px;
+      border: 1px solid #334155;
     }
 
-    .media-container video {
+    .banner-container video, .banner-container img {
       width: 100%;
       height: auto;
       display: block;
-      object-fit: contain;
     }
 
-    /* Área dos Botões */
+    /* Camada para Botões Clicáveis por cima do Banner */
+    .clickable-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* Deixa o fundo livre e ativa apenas os links */
+    }
+
+    /* Botão Shopee Clicável Transparente sobre o Botão do Banner */
+    .hotspot-shopee {
+      position: absolute;
+      top: 38%;
+      left: 32%;
+      width: 17%;
+      height: 12%;
+      pointer-events: auto;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    /* Botão Mercado Livre Clicável Transparente sobre o Botão do Banner */
+    .hotspot-ml {
+      position: absolute;
+      top: 38%;
+      left: 51%;
+      width: 17%;
+      height: 12%;
+      pointer-events: auto;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    /* Feedback visual ao clicar/tocar no banner */
+    .hotspot-shopee:active, .hotspot-ml:active {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Lista de Botões Principais */
     .buttons-container {
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
     }
 
     .btn {
       width: 100%;
-      padding: 14px 18px;
-      border-radius: 28px; /* Design moderno idêntico ao do anúncio */
+      padding: 14px 20px;
+      border-radius: 30px;
       text-decoration: none;
       font-weight: 800;
       font-size: 1rem;
@@ -98,45 +112,39 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      transition: transform 0.15s ease-in-out, filter 0.15s ease-in-out;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-      border: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: transform 0.15s ease-in-out;
     }
 
-    .btn:active, .btn:hover {
-      transform: scale(0.98);
-      filter: brightness(1.08);
+    .btn:active {
+      transform: scale(0.97);
     }
 
-    .btn svg {
-      width: 24px;
-      height: 24px;
-      flex-shrink: 0;
-    }
-
-    /* Botão WhatsApp */
     .btn-whatsapp {
-      background: linear-gradient(135deg, #25D366, #128C7E);
+      background-color: #25d366;
       color: #ffffff;
     }
 
-    /* Botão Shopee */
     .btn-shopee {
-      background: linear-gradient(135deg, #EE4D2D, #FF6A3C);
+      background-color: #ee4d2d;
       color: #ffffff;
     }
 
-    /* Botão Mercado Livre */
     .btn-ml {
-      background: linear-gradient(135deg, #FFE600, #F3C700);
-      color: #2D3277;
+      background-color: #ffe600;
+      color: #2d3277;
     }
 
-    /* Rodapé */
+    .btn-icon {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
     .footer-text {
-      margin-top: 25px;
+      margin-top: 15px;
       font-size: 0.75rem;
-      color: #6b7280;
+      color: #64748b;
       text-align: center;
     }
   </style>
@@ -144,53 +152,45 @@
 <body>
 
   <div class="main-wrapper">
-    
-    <!-- Título Principal -->
-    <div class="header-section">
-      <h1 class="header-title">🛍️ Lojinha de Achadinhos</h1>
-      <p class="header-subtitle">As melhores promoções reunidas em um só lugar!</p>
-    </div>
 
-    <!-- Mídia (Vídeo / Banner) -->
-    <div class="media-container">
+    <!-- BANNER COM BOTÕES CLICÁVEIS SOBREPOSTOS -->
+    <div class="banner-container">
       <video autoplay loop muted playsinline>
         <source src="fundo-lojinha.mp4" type="video/mp4">
         Seu navegador não suporta vídeos.
       </video>
+
+      <div class="clickable-overlay">
+        <!-- Áreas Clicáveis em cima da Imagem/Vídeo -->
+        <a href="https://collshp.com/chztrlojinha?view=storefront" target="_blank" rel="noopener noreferrer" class="hotspot-shopee" title="Shopee"></a>
+        <a href="https://mercadolivre.com/sec/1nNnSoA" target="_blank" rel="noopener noreferrer" class="hotspot-ml" title="Mercado Livre"></a>
+      </div>
     </div>
 
-    <!-- Botões estilo Mídia -->
+    <!-- BOTÕES EXTERNOS DE ACESSO DIRETO -->
     <div class="buttons-container">
       
-      <!-- BOTÃO WHATSAPP (Atenção: Substitua o atributo href pelo link real do seu grupo) -->
+      <!-- WHATSAPP -->
       <a href="https://chat.whatsapp.com/KyKtk9fRNCM9AAGgERy6Z0" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.842-1.001z"/>
-        </svg>
-        Entrar no Grupo Vip do WhatsApp
+        <svg class="btn-icon" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.842-1.001z"/></svg>
+        Entrar no Grupo VIP do WhatsApp
       </a>
 
-      <!-- BOTÃO SHOPEE -->
+      <!-- SHOPEE -->
       <a href="https://collshp.com/chztrlojinha?view=storefront" target="_blank" rel="noopener noreferrer" class="btn btn-shopee">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm0 10c-2.76 0-5-2.24-5-5h2c0 1.66 1.34 3 3 3s3-1.34 3-3h2c0 2.76-2.24 5-5 5z"/>
-        </svg>
+        <svg class="btn-icon" viewBox="0 0 24 24"><path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm0 10c-2.76 0-5-2.24-5-5h2c0 1.66 1.34 3 3 3s3-1.34 3-3h2c0 2.76-2.24 5-5 5z"/></svg>
         Ver Ofertas na Shopee
       </a>
 
-      <!-- BOTÃO MERCADO LIVRE -->
+      <!-- MERCADO LIVRE -->
       <a href="https://mercadolivre.com/sec/1nNnSoA" target="_blank" rel="noopener noreferrer" class="btn btn-ml">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-        </svg>
+        <svg class="btn-icon" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
         Ver Ofertas no Mercado Livre
       </a>
 
     </div>
 
-    <!-- Rodapé -->
     <p class="footer-text">Achadinhos do Carlos © Todos os direitos reservados.</p>
-    
   </div>
 
 </body>
