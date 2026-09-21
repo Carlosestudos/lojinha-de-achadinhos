@@ -3,32 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-  <title>Lojinha de Achadinhos</title>
+  <title>🛒 Carlos Achadinhos</title>
   
-  <!-- Vinculo do arquivo Manifest para o Aplicativo PWA -->
-  <link rel="manifest" href="manifest.json">
+  <!-- Manifest PWA -->
+  <link rel="manifest" href="https://carlosestudos.github.io/lojinha-de-achadinhos/manifest.json">
 
-  <!-- 🟢 METATAGS PARA O LINK FICAR PERSONALIZADO NO WHATSAPP -->
+  <!-- Meta Tags para WhatsApp e Redes Sociais com o Carrinho 🛒 -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="🛍️ Lojinha de Achadinhos do Carlos">
+  <meta property="og:title" content="🛒 Carlos Achadinhos">
   <meta property="og:description" content="As melhores promoções da Shopee e Mercado Livre em um só lugar! Entre e confira.">
-  <meta property="og:image" content="https://img.icons8.com/color/512/shopping-cart--v1.png">
+  <meta property="og:image" content="https://carlosestudos.github.io/lojinha-de-achadinhos/logo.jpg">
+  <meta property="og:image:secure_url" content="https://carlosestudos.github.io/lojinha-de-achadinhos/logo.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="500">
+  <meta property="og:image:height" content="500">
   <meta property="og:url" content="https://carlosestudos.github.io/lojinha-de-achadinhos/">
 
-  <!-- Configurações para virar Aplicativo no Celular -->
+  <!-- Configurações para Aplicativo no Celular -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Achadinhos">
+  <meta name="apple-mobile-web-app-title" content="🛒 Carlos Achadinhos">
   <meta name="theme-color" content="#000000">
 
-  <!-- Ícones para instalação do atalho -->
-  <link rel="apple-touch-icon" href="https://img.icons8.com/color/180/shopping-cart--v1.png">
-  <link rel="icon" type="image/png" href="https://img.icons8.com/color/192/shopping-cart--v1.png">
+  <!-- Ícones do App (Sua Logo) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="https://carlosestudos.github.io/lojinha-de-achadinhos/logo.jpg">
+  <link rel="icon" type="image/jpeg" sizes="192x192" href="https://carlosestudos.github.io/lojinha-de-achadinhos/logo.jpg">
+  <link rel="shortcut icon" href="https://carlosestudos.github.io/lojinha-de-achadinhos/logo.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -38,133 +43,255 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    html, body {
-      width: 100%;
+    body {
+      width: 100vw;
       min-height: 100vh;
       background-color: #000000;
       font-family: 'Poppins', sans-serif;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      color: #ffffff;
+      position: relative;
       overflow-x: hidden;
     }
 
-    .app-viewport {
-      position: relative;
+    /* Vídeo de fundo cobrindo a tela toda */
+    .bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100vw;
-      max-width: 1000px;
+      height: 100vh;
+      object-fit: cover;
+      z-index: 1;
+      opacity: 0.35;
+    }
+
+    /* Camada para escurecer suavemente o vídeo */
+    .bg-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.85) 100%);
+      z-index: 2;
+    }
+
+    /* Cartão Principal estilo Aplicativo */
+    .app-card {
+      position: relative;
+      z-index: 3;
+      width: 90%;
+      max-width: 420px;
+      margin: 20px auto;
+      padding: 28px 20px;
+      background: rgba(20, 20, 20, 0.75);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 28px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 0;
     }
 
-    .banner-wrapper {
-      position: relative;
-      width: 100%;
-      height: auto;
-      overflow: hidden;
-      background-color: #000000;
-    }
-
-    .banner-wrapper video, .banner-wrapper img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: contain;
-    }
-
-    .overlay-actions {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .btn-whatsapp-overlay {
-      position: absolute;
-      top: 4%;
-      right: 4%;
-      background: linear-gradient(135deg, #25D366, #128C7E);
+    /* Tag de Destaque */
+    .badge {
+      background: #ff3b30;
       color: #ffffff;
-      text-decoration: none;
+      font-size: 0.7rem;
       font-weight: 800;
-      font-size: clamp(0.65rem, 2vw, 0.95rem);
-      padding: 6px 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 6px 16px;
       border-radius: 20px;
+      margin-bottom: 16px;
+      display: inline-block;
+      box-shadow: 0 4px 10px rgba(255, 59, 48, 0.3);
+    }
+
+    /* Título com a Marca e Carrinho 🛒 */
+    .app-title {
+      font-size: 1.7rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      background: linear-gradient(180deg, #ffffff 0%, #d1d1d1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Subtítulo explicativo */
+    .app-subtitle {
+      font-size: 0.85rem;
+      color: #cccccc;
+      line-height: 1.5;
+      margin-bottom: 24px;
+      padding: 0 10px;
+    }
+
+    /* Container dos Botões */
+    .buttons-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    /* Estilo Geral dos Botões */
+    .btn-store {
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 700;
       display: flex;
       align-items: center;
-      gap: 6px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      z-index: 10;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    .btn-whatsapp-overlay svg {
-      width: 16px;
-      height: 16px;
-      fill: #ffffff;
+    .btn-store:active {
+      transform: scale(0.98);
     }
 
-    .hotspot-shopee {
-      position: absolute;
-      top: 47%;
-      left: 32%;
-      width: 17%;
-      height: 9%;
-      border-radius: 20px;
-      cursor: pointer;
-      z-index: 5;
+    .btn-store svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
     }
 
-    .hotspot-ml {
-      position: absolute;
-      top: 47%;
-      left: 50.5%;
-      width: 17%;
-      height: 9%;
-      border-radius: 20px;
-      cursor: pointer;
-      z-index: 5;
+    /* Botão Shopee */
+    .btn-shopee {
+      background: linear-gradient(135deg, #FF5722, #EE4D2D);
+      color: #ffffff;
     }
 
-    .hotspot-shopee:active, .hotspot-ml:active {
-      background-color: rgba(255, 255, 255, 0.2);
+    /* Botão Mercado Livre */
+    .btn-mercadolivre {
+      background: linear-gradient(135deg, #FFF159, #FFE600);
+      color: #2D3277;
     }
 
-    .footer-note {
-      color: #718096;
-      font-size: 0.75rem;
-      text-align: center;
-      padding: 12px 0;
+    /* Botão WhatsApp */
+    .btn-whatsapp {
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: #ffffff;
+    }
+
+    /* Divisor */
+    .divider {
+      width: 80%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.1);
+      margin: 10px 0 20px 0;
+    }
+
+    /* Seção em Destaque */
+    .section-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #e0e0e0;
+      margin-bottom: 12px;
+    }
+
+    /* Cards de Produtos / Promoções Futuras */
+    .offer-box {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 8px;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+
+    .offer-box strong {
+      color: #fff;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    /* Rodapé */
+    .footer-text {
+      font-size: 0.7rem;
+      color: #777777;
+      margin-top: 15px;
     }
   </style>
 </head>
 <body>
 
-  <div class="app-viewport">
+  <!-- Vídeo de fundo cobrindo a tela inteira -->
+  <video class="bg-video" autoplay loop muted playsinline>
+    <source src="fundo-lojinha.mp4" type="video/mp4">
+  </video>
+  <div class="bg-overlay"></div>
 
-    <div class="banner-wrapper">
-      <video autoplay loop muted playsinline>
-        <source src="fundo-lojinha.mp4" type="video/mp4">
-        Seu navegador não suporta vídeos.
-      </video>
+  <!-- Cartão de Conteúdo Centralizado -->
+  <div class="app-card">
+    
+    <span class="badge">OFERTAS EXCLUSIVAS</span>
+    
+    <h1 class="app-title">🛒 Lojinha de<br>Achadinhos</h1>
+    
+    <p class="app-subtitle">
+      Reunimos os melhores achadinhos e promoções imperdíveis da <strong>Shopee</strong> e do <strong>Mercado Livre</strong> em um único endereço seguro!
+    </p>
 
-      <div class="overlay-actions">
-        <a href="https://chat.whatsapp.com/KyKtk9fRNCM9AAGgERy6Z0" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-overlay">
-          <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.842-1.001z"/></svg>
-          Chama no WhatsApp
-        </a>
+    <div class="buttons-container">
+      
+      <!-- Botão Shopee -->
+      <a href="https://collshp.com/chztrlojinha?view=storefront" target="_blank" rel="noopener noreferrer" class="btn-store btn-shopee">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.27 5.25A2.25 2.25 0 0 0 17.02 3H6.98a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 6.98 21h10.04a2.25 2.25 0 0 0 2.25-2.25V5.25ZM12 6a3 3 0 0 1 3 3v1h-1.5V9a1.5 1.5 0 0 0-3 0v1H9V9a3 3 0 0 1 3-3Zm3.75 10.5H8.25a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5Z"/>
+        </svg>
+        Ir para Shopee
+      </a>
 
-        <a href="https://collshp.com/chztrlojinha?view=storefront" target="_blank" rel="noopener noreferrer" class="hotspot-shopee" title="Shopee"></a>
-        <a href="https://mercadolivre.com/sec/1nNnSoA" target="_blank" rel="noopener noreferrer" class="hotspot-ml" title="Mercado Livre"></a>
-      </div>
+      <!-- Botão Mercado Livre -->
+      <a href="https://mercadolivre.com/sec/1nNnSoA" target="_blank" rel="noopener noreferrer" class="btn-store btn-mercadolivre">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.8 13.1a3.5 3.5 0 0 1-4.9 0l-3.2-3.2a1 1 0 0 1 1.4-1.4l3.2 3.2a1.5 1.5 0 0 0 2.1 0l3.2-3.2a1 1 0 0 1 1.4 1.4Z"/>
+        </svg>
+        Ir para Mercado Livre
+      </a>
+
+      <!-- Botão WhatsApp -->
+      <a href="https://chat.whatsapp.com/KyKtk9fRNCM9AAGgERy6Z0" target="_blank" rel="noopener noreferrer" class="btn-store btn-whatsapp">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.333 4.993L2 22l5.233-1.237a9.96 9.96 0 0 0 4.779 1.221h.004c5.505 0 9.988-4.478 9.989-9.984 0-2.669-1.038-5.176-2.925-7.062A9.925 9.925 0 0 0 12.012 2zm0 17.986h-.003a8.31 8.31 0 0 1-4.239-1.163l-.304-.181-3.151.745.836-3.04-.199-.317a8.29 8.29 0 0 1-1.27-4.398c.001-4.58 3.73-8.307 8.313-8.307 2.218 0 4.305.865 5.871 2.433 1.567 1.569 2.43 3.657 2.429 5.876 0 4.58-3.729 8.307-8.283 8.352z"/>
+        </svg>
+        Entrar no Grupo do WhatsApp
+      </a>
+
     </div>
 
-    <p class="footer-note">Achadinhos do Carlos © Todos os direitos reservados.</p>
+    <div class="divider"></div>
+
+    <p class="section-title">📍 Achadinhos em Destaque</p>
+
+    <div class="offer-box">
+      <strong>Futura Oferta #1</strong>
+      Em breve novidades e cupons!
+    </div>
+
+    <div class="offer-box">
+      <strong>Futura Oferta #2</strong>
+      Em breve novidades e cupons!
+    </div>
+
+    <p class="footer-text">Carlos Achadinhos © Todos os direitos reservados.</p>
 
   </div>
 
