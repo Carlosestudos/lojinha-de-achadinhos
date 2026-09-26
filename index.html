@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>🛒 Lojinha de Achadinhos do Carlos</title>
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
 
+    body {
+      width: 100vw;
+      min-height: 100vh;
+      background-color: #000000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+    }
+
+    .poster-container {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Mídia principal (Imagem ou Vídeo) */
+    .poster-media {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Áreas Clicáveis sobrepostas */
+    .clickable-area {
+      position: absolute;
+      left: 26%;
+      width: 48%;
+      height: 6.2%;
+      border-radius: 12px;
+      z-index: 10;
+      cursor: pointer;
+    }
+
+    .link-shopee { top: 45.5%; }
+    .link-mercadolivre { top: 57.2%; }
+    .link-whatsapp { top: 68.8%; }
+
+    .clickable-area:active {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="poster-container">
+    
+    <!-- Se for Imagem (descomente e ajuste o nome se usar imagem): -->
+    <img src="1000278928.jpg" alt="Lojinha de Achadinhos" class="poster-media">
+
+    <!-- Se for Vídeo MP4 (troque 'seu_video.mp4' pelo nome do seu arquivo mp4 no GitHub): -->
+    <!--
+    <video autoplay loop muted playsinline class="poster-media">
+      <source src="seu_video.mp4" type="video/mp4">
+    </video>
+    -->
+
+    <!-- Botões Clicáveis por cima -->
+    <a href="https://collshp.com/chztrlojinha?view=storefront" target="_blank" class="clickable-area link-shopee" title="Shopee"></a>
+    <a href="https://mercadolivre.com/sec/1nNnSoA" target="_blank" class="clickable-area link-mercadolivre" title="Mercado Livre"></a>
+    <a href="https://chat.whatsapp.com/KyKtk9fRNCM9AAGgERy6Z0" target="_blank" class="clickable-area link-whatsapp" title="WhatsApp"></a>
+
+  </div>
+
+</body>
+</html>
